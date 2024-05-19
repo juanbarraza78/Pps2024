@@ -1,0 +1,72 @@
+<ion-content>
+  <div id="header">
+    <div id="app-bar">
+      <div id="logo">
+        <img (click)="goHome()" src="../../../assets/logo.png" alt="Logo" />
+      </div>
+    </div>
+
+    <h1>Ingresar</h1>
+    <p>
+      Ingrese para descubrir cosas increibles <br />
+      Te esperamos (=
+    </p>
+  </div>
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <ion-card-content>
+        <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <ion-item color="secondary">
+            <ion-input
+              type="email"
+              placeholder="Correo Electronico"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="secondary">
+            <ion-input
+              type="password"
+              placeholder="Contraseña"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+          <ion-button color="secondary" type="submit" expand="block"
+            >Ingresar</ion-button
+          >
+          <ion-toast
+            color="danger"
+            [isOpen]="isToastOpen"
+            message="Correo o contraseña invalida"
+            [duration]="3000"
+            (didDismiss)="setOpen(false)"
+          ></ion-toast>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="line-text">
+      <span class="lines"></span>
+      <span class="text">No tienes una cuenta?</span>
+    </div>
+
+    <ion-card class="form-wrapper">
+      <ion-card-content>
+        <ion-button class="register" color="secondary" (click)="goRegister()">
+          Registrate Ahora!
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+    <ion-fab-button>
+      <img src="../../../assets/logo.png" alt=""
+    /></ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="tertiary" (click)="userA()"> A </ion-fab-button>
+      <ion-fab-button color="success" (click)="userB()"> B </ion-fab-button>
+      <ion-fab-button color="secondary" (click)="userC()"> C </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,117 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goHome()" color="primary"> Home </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goLogin()" color="primary"> Login </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1>Create your Acount</h1>
+  <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item color="primary">
+      <ion-input type="text" label="Username" placeholder="Enter your Username" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-input type="email" label="Email" placeholder="Enter your Email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-input type="password" label="Password" placeholder="Enter your Password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" shape="round">Join Us</ion-button>
+    
+  </form>
+  <p>B pressing 'Joun Us' you agree to <br> our terms & conditions. </p>
+</ion-content> -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <img
+        (click)="goHome()"
+        src="../../../assets/hogar.svg"
+        class="logoInterfaz"
+        alt="inicio"
+      />
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <img
+        (click)="goLogin()"
+        src="../../../assets/actualizar.svg"
+        class="logoInterfaz"
+        alt="inicio"
+      />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <svg
+    class="back-blob"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#8295A3"
+      d="M68.6,-33.5C81.6,-17.2,79.6,13.8,65.7,37.6C51.8,61.3,25.9,77.8,2.1,76.6C-21.7,75.4,-43.5,56.5,-54.2,34.6C-65,12.7,-64.8,-12.3,-53.9,-27.4C-43,-42.4,-21.5,-47.6,3.2,-49.4C27.9,-51.2,55.7,-49.7,68.6,-33.5Z"
+      transform="translate(100 100)"
+    />
+  </svg>
+  <h1 class="title">Registro</h1>
+  <div class="ion-padding">
+    <form
+      class="ion-padding"
+      id="form"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="wrap-input">
+        <input
+          class="input"
+          type="text"
+          placeholder="Usuario"
+          formControlName="username"
+        />
+      </div>
+      <div class="wrap-input">
+        <input
+          class="input"
+          type="text"
+          placeholder="Correo Electronico"
+          formControlName="email"
+        />
+      </div>
+      <div class="wrap-input">
+        <input
+          class="input"
+          type="password"
+          placeholder="Contraseña"
+          formControlName="password"
+        />
+      </div>
+      <div class="container-form-btn">
+        <button type="submit" color="secondary" class="form-btn custom-font">
+          Ingresar
+        </button>
+        <ion-toast
+          color="danger"
+          [isOpen]="isToastOpen"
+          message="Contraseña o correo incorrecto"
+          [duration]="3000"
+          (didDismiss)="setOpen(false)"
+        ></ion-toast>
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="primary">
+    <p class="ion-text-center custom-font" (click)="goLogin()">
+      Ya tienes una cuenta? Ingresa
+    </p>
+  </ion-toolbar>
+</ion-footer>

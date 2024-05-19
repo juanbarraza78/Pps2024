@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title (click)="goHome()">
+      <img
+        (click)="goHome()"
+        src="../../../assets/logo.png"
+        alt=""
+        class="logo"
+      />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="secondary">
+  <div class="container">
+    @if(this.authService.currentUserSig()){
+    <ion-button color="primary" (click)="goCosasLindas()"
+      ><img src="../../../assets/superestrella.png" alt="Cosas Lindas"
+    /></ion-button>
+    <ion-button class="segundoBtn" color="primary" (click)="goCosasFeas()"
+      ><img src="../../../assets/enfadado.png" alt="Cosas Feas"
+    /></ion-button>
+    }
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="primary">
+    @if(this.authService.currentUserSig() == null) {
+    <ion-buttons slot="secondary">
+      <img
+        (click)="goLogin()"
+        src="../../../assets/usuario.svg"
+        alt=""
+        class="logoInterfaz"
+      />
+    </ion-buttons>
+    } @if(this.authService.currentUserSig()) {
+    <ion-buttons slot="primary">
+      <img
+        (click)="logout()"
+        src="../../../assets/bloquear-alt.svg"
+        alt=""
+        class="logoInterfaz"
+      />
+    </ion-buttons>
+    }
+  </ion-toolbar>
+</ion-footer>

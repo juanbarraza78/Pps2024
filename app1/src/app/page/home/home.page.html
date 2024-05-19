@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    @if(this.authService.currentUserSig() == null) {
+    <ion-buttons slot="secondary">
+      <ion-button (click)="goLogin()"> Ingresar </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goRegister()"> Registrar </ion-button>
+    </ion-buttons>
+    } @if(this.authService.currentUserSig()) {
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()"> Salir </ion-button>
+    </ion-buttons>
+    }
+    <ion-title (click)="goHome()">Jota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    @if (this.auth.currentUserSig()) { @if(!estaBloqueado){
+    <ion-button (click)="cambiarBloqueado()" color="free">
+      <img src="../../../assets/img/free.png" alt="" />
+    </ion-button>
+    } @if(estaBloqueado){
+    <ion-button (click)="formAlert()" id="present-alert" color="block">
+      <img src="../../../assets/img/block.png" alt="" />
+    </ion-button>
+    } }
+  </div>
+</ion-content>

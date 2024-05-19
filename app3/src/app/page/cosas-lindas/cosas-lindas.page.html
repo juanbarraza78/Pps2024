@@ -1,0 +1,74 @@
+<!-- nav -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <img
+        (click)="goHome()"
+        src="../../../assets/hogar.svg"
+        class="logoInterfaz"
+        alt="inicio"
+      />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- Contenido main -->
+<ion-content>
+  <!-- Una img -->
+  @if(this.router.url == "/cosas-lindas"){
+  <h1 class="list-header">Imagenes Lindas</h1>
+  } @if(this.router.url == "/cosas-feas"){
+  <h1 class="list-header">Imagenes Feas</h1>
+  }
+  <div class="list-img">
+    @for (image of images; track image.id) { @if (this.router.url ==
+    image.lindoFeo) {
+    <div class="card">
+      <ion-img src="{{image.url}}"></ion-img>
+      <div class="card-content">
+        <h3 class="title">{{image.user}}</h3>
+        @if(this.router.url == "/cosas-lindas") {
+        <h2 class="subtitle">{{image.likes}}</h2>
+        } @if(this.router.url == "/cosas-feas") {
+        <h2 class="subtitle">{{image.dislikes}}</h2>
+        }
+        <ion-buttons>
+          @if(this.router.url == "/cosas-lindas") {
+          <ion-button
+            class="bnt1"
+            shape="round"
+            (click)="likeImg(image.id,image)"
+          >
+            <ion-icon slot="icon-only" name="happy-outline"></ion-icon>
+          </ion-button>
+          } @if(this.router.url == "/cosas-feas"){
+          <ion-button
+            (click)="disLikeImg(image.id,image)"
+            class="bnt2"
+            shape="round"
+          >
+            <ion-icon slot="icon-only" name="skull-outline"></ion-icon>
+          </ion-button>
+          }
+        </ion-buttons>
+      </div>
+    </div>
+    } }
+  </div>
+  <!-- Grafico de barras -->
+  @if (this.router.url == "/cosas-lindas") {
+  <app-grafico-barras></app-grafico-barras>
+  } @if (this.router.url == "/cosas-feas") {
+  <app-grafico-barras-real></app-grafico-barras-real>
+  }
+
+  <!-- Flotante -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+    <ion-fab-button>
+      <ion-icon (click)="takeFoto()" name="camera-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<!-- footer -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="primary"> </ion-toolbar>
+</ion-footer>

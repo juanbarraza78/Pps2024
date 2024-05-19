@@ -1,0 +1,49 @@
+"Los proyectos no tienen que tener mayusculas ni guion medio y capaz ni guion bajo"
+
+ionic start (nombreProyexto)
+
+npm i @angular/fire
+npm install @capacitor/android
+npm install @capacitor/assets (intalar iconos)
+npm install @capacitor/camera (Instalar camara)
+npm install @swimlane/ngx-charts --save (para hacer graficos)
+
+ng add @angular/fire (genera los providers para firebase)
+npx capacitor-assets generate (genera los iconos)
+
+npx cap add android (antes necesita un build)
+
+ionic build
+npx cap sync
+npx cap open android
+
+ionic serve
+
+
+para cambiar el id: 
+en android/app/build.grandle
+cambia el string de la propiedad:
+applicationId "app5.didactico" (minimo un . )
+
+Qr
+npm install angularx-qrcode --save
+
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+esto en el index si queres los iconos de ionic
+
+ionic cordova plugin add phonegap-plugin-barcodescanner
+npm install @awesome-cordova-plugins/barcode-scanner
+
+Forzar dependencias
+--legacy-peer-deps
+
+
