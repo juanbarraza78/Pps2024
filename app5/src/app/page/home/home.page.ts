@@ -55,16 +55,33 @@ export class HomePage implements OnInit {
 
   ngOnInit() {}
 
+  // Injeccion
   authService = inject(AuthService);
   router = inject(Router);
 
   animales: cuadroInterfaz[] = ANIMALES;
   colores: cuadroInterfaz[] = COLORES;
   numeros: cuadroInterfaz[] = NUMEROS;
-
   tipo: string = 'animales';
   idioma: string = 'español';
 
+  // Ruteo
+  goRegister() {
+    this.router.navigateByUrl('/register');
+  }
+
+  goLogin() {
+    this.router.navigateByUrl('/login');
+  }
+
+  goHome() {
+    this.router.navigateByUrl('/home');
+  }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigateByUrl('/login');
+  }
+  // Main
   getImgTipo() {
     if (this.tipo == 'numeros') {
       return '../../../assets/numeros.png';
@@ -83,22 +100,6 @@ export class HomePage implements OnInit {
       return '../../../assets/portuges.png';
     }
   }
-
-  goRegister() {
-    this.router.navigateByUrl('/register');
-  }
-
-  goLogin() {
-    this.router.navigateByUrl('/login');
-  }
-
-  goHome() {
-    this.router.navigateByUrl('/home');
-  }
-  logout(): void {
-    this.authService.logout();
-  }
-
   public Reproducir(cuadro: cuadroInterfaz) {
     let audio = new Audio();
     if (this.idioma == 'español') {
@@ -111,11 +112,9 @@ export class HomePage implements OnInit {
     audio.load();
     audio.play();
   }
-
   cambiarTipo(tipo: string) {
     this.tipo = tipo;
   }
-
   cambiarIdioma(idioma: string) {
     this.idioma = idioma;
   }

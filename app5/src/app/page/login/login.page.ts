@@ -107,15 +107,27 @@ export class LoginPage implements OnInit {
     this.authService.logout();
   }
   userA() {
-    this.form.setValue({ email: 'kopop74796@idsho.com', password: 'asd123' });
+    this.form.setValue({ email: 'admin@admin.com', password: '111111' });
   }
   userB() {
-    this.form.setValue({ email: 'palmiharze@gufum.com', password: 'asd123' });
+    this.form.setValue({ email: 'invitado@invitado.com', password: '222222' });
   }
   userC() {
     this.form.setValue({
-      email: 'jeniffer93408@wlks.crankymonkey.info',
-      password: 'asd123',
+      email: 'usuario@usuario.com',
+      password: '333333',
+    });
+  }
+  userD() {
+    this.form.setValue({
+      email: 'anonimo@anonimo.com',
+      password: '444444',
+    });
+  }
+  userE() {
+    this.form.setValue({
+      email: 'tester@tester.com',
+      password: '555555',
     });
   }
 }

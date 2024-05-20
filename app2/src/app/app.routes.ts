@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
 import { pasoUnaVezGuard } from './guard/paso-una-vez.guard';
+import { logeadoGuard } from './guard/logeado.guard';
 
 export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () =>
       import('./page/home/home.page').then((m) => m.HomePage),
+    canActivate: [logeadoGuard],
   },
   {
     path: 'login',

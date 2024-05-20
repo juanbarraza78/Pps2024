@@ -1,36 +1,7 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="goHome()" color="primary"> Home </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button (click)="goLogin()" color="primary"> Login </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <h1>Create your Acount</h1>
-  <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <ion-item color="primary">
-      <ion-input type="text" label="Username" placeholder="Enter your Username" formControlName="username"></ion-input>
-    </ion-item>
-    <ion-item color="primary">
-      <ion-input type="email" label="Email" placeholder="Enter your Email" formControlName="email"></ion-input>
-    </ion-item>
-    <ion-item color="primary">
-      <ion-input type="password" label="Password" placeholder="Enter your Password" formControlName="password"></ion-input>
-    </ion-item>
-    <ion-button type="submit" expand="block" shape="round">Join Us</ion-button>
-    <ion-toast color="danger" [isOpen]="isToastOpen" message="Incorrect Password or Email" [duration]="3000" (didDismiss)="setOpen(false)"></ion-toast>
-  </form>
-  <p>B pressing 'Joun Us' you agree to <br> our terms & conditions. </p>
-</ion-content> -->
-
 <ion-content [fullscreen]="true">
   <ion-fab slot="fixed" vertical="top" horizontal="start">
-    <ion-fab-button class="fab-button" (click)="goHome()">
-      <ion-icon class="home" name="home-outline"></ion-icon>
+    <ion-fab-button class="fab-button" (click)="goLogin()">
+      <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <div class="circle circle1"></div>
