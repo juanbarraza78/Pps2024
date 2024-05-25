@@ -1,4 +1,4 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import {
@@ -12,7 +12,8 @@ import { environment } from './environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-// import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 if (environment.production) {
   enableProdMode();
@@ -23,20 +24,19 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes),
-    importProvidersFrom(
-      provideFirebaseApp(() =>
-        initializeApp({
-          projectId: 'gamesjuanbarraza',
-          appId: '1:636037566370:web:c4fd0e6c82d7eef2f8acfb',
-          storageBucket: 'gamesjuanbarraza.appspot.com',
-          apiKey: 'AIzaSyD5I1v6PeAjpMM-q4HCXN6FYPIX8Mr_mBE',
-          authDomain: 'gamesjuanbarraza.firebaseapp.com',
-          messagingSenderId: '636037566370',
-        })
-      )
+    provideFirebaseApp(() =>
+      initializeApp({
+        projectId: 'gamesjuanbarraza',
+        appId: '1:636037566370:web:c4fd0e6c82d7eef2f8acfb',
+        storageBucket: 'gamesjuanbarraza.appspot.com',
+        apiKey: 'AIzaSyD5I1v6PeAjpMM-q4HCXN6FYPIX8Mr_mBE',
+        authDomain: 'gamesjuanbarraza.firebaseapp.com',
+        messagingSenderId: '636037566370',
+      })
     ),
-    importProvidersFrom(provideAuth(() => getAuth())),
-    importProvidersFrom(provideFirestore(() => getFirestore())),
-    // BarcodeScanner,
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
+    BarcodeScanner,
   ],
 });

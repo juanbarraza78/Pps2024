@@ -4,6 +4,7 @@ export interface imgIdInterface extends imgInterface {
 
 export interface imgInterface {
   date: Date;
+  dateString: string;
   likes: number;
   dislikes: number;
   listaLikes: string[];

@@ -14,11 +14,11 @@ export class GraficoBarrasComponent implements OnInit {
 
   data = inject(DataService);
 
-  view: [number, number] = [400, 400];
+  view: [number, number] = [350, 350];
 
   // options
   gradient: boolean = true;
-  showLegend: boolean = true;
+  showLegend: boolean = false;
   showLabels: boolean = false;
   isDoughnut: boolean = false;
   legendPosition: any = 'below';

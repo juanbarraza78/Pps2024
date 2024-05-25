@@ -164,14 +164,20 @@ export class HomePage implements OnInit {
         ) {
           this.vertical();
         } else if (
-          (acceleration.x <= -10 || acceleration.x >= 10) &&
+          acceleration.z >= 9 &&
+          acceleration.y >= -1 &&
+          acceleration.y <= 1 &&
+          acceleration.x <= 1 &&
+          acceleration.x >= -1 &&
           this.posicionActualCelular != 'Horizontal' &&
+          this.posicionActualCelular != 'plano' &&
           this.accionActivo == false
         ) {
           this.hotizontal();
         }
       });
   }
+  // (acceleration.z >= 9 && (acceleration.y >= -1 && acceleration.y <= 1) && (acceleration.x >= -1 && acceleration.x <= 1))
   stopMotionHandle() {
     this.subscription.unsubscribe();
   }

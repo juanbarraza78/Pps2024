@@ -12,7 +12,7 @@ import { DataService } from 'src/app/service/data.service';
 export class GraficoBarrasRealComponent implements OnInit {
   ngOnInit() {}
   data = inject(DataService);
-  view: [number, number] = [400, 400];
+  view: [number, number] = [350, 350];
 
   get dislikes() {
     return this.data.dislikesData;
@@ -23,9 +23,9 @@ export class GraficoBarrasRealComponent implements OnInit {
   showYAxis = true;
   gradient = false;
   showLegend = false;
-  showXAxisLabel = true;
+  showXAxisLabel = false;
   xAxisLabel = 'Country';
-  showYAxisLabel = true;
+  showYAxisLabel = false;
   yAxisLabel = 'Population';
 
   colorScheme: any = {

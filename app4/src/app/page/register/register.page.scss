@@ -1,0 +1,88 @@
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
+
+.scroll-content {
+  overflow: hidden;
+}
+
+ion-content {
+  --background: #ffff;
+  overflow: hidden;
+  --overflow: hidden;
+}
+
+.circle {
+  height: 550px;
+  width: 550px;
+  background: #4c7554;
+  box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+  border-radius: 50%;
+}
+.circle1 {
+  margin-left: -200px;
+  margin-top: -255px;
+  margin-bottom: 10px;
+}
+
+.circle2 {
+  margin-left: -15px;
+  margin-top: -18px;
+}
+
+.container {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.itemDesign {
+  border: 1px solid var(--ion-color-light);
+  border-radius: 20px;
+}
+
+ion-icon {
+  font-size: 8rem;
+  //   margin-left: 25vw;
+}
+
+.align {
+  position: absolute;
+  width: 75%;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  ion-text {
+    font-size: small;
+  }
+}
+
+ion-row {
+  //   margin-left: -8vw;
+  ion-icon {
+    font-size: 2rem;
+  }
+}
+
+.home {
+  width: 20px;
+  height: 20px;
+}
+
+.fab-button {
+  width: 30px;
+  height: 30px;
+}
+
+form {
+  margin-top: 20px;
+}

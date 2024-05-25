@@ -1,0 +1,88 @@
+<ion-content [fullscreen]="true">
+  <ion-fab slot="fixed" vertical="top" horizontal="start">
+    <ion-fab-button class="fab-button" (click)="goRegister()">
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="circle circle1"></div>
+  <div class="container">
+    <ion-icon class="use" name="person" color="secondary"></ion-icon>
+    <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ion-button type="submit" expand="block" shape="round" color="secondary"
+        >Ingresar</ion-button
+      >
+      <ion-item lines="none" class="ion-margin itemDesign" color="light">
+        <ion-input
+          formControlName="email"
+          placeholder="Correo electrónico"
+          type="text"
+          clearInput="true"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-margin itemDesign" color="light">
+        <ion-input
+          formControlName="password"
+          placeholder="Contraseña"
+          type="password"
+          clearInput="true"
+        ></ion-input>
+      </ion-item>
+
+      <ion-toast
+        color="danger"
+        [isOpen]="isToastOpen"
+        message="Correo electrónico o Contraseña incorrecto"
+        [duration]="3000"
+        (didDismiss)="setOpen(false)"
+      ></ion-toast>
+    </form>
+
+    <ion-chip (click)="userA()">
+      <ion-avatar>
+        <img
+          class="home"
+          alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-label>Usuario 1</ion-label>
+      <ion-icon class="home" name="checkmark-done-outline"></ion-icon>
+    </ion-chip>
+    <ion-chip (click)="userB()">
+      <ion-avatar>
+        <img
+          class="home"
+          alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-label>Usuario 2</ion-label>
+      <ion-icon class="home" name="checkmark-done-outline"></ion-icon>
+    </ion-chip>
+    <ion-chip (click)="userC()">
+      <ion-avatar>
+        <img
+          class="home"
+          alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-label>Usuario 3</ion-label>
+      <ion-icon class="home" name="checkmark-done-outline"></ion-icon>
+    </ion-chip>
+  </div>
+
+  <div class="circle circle2"></div>
+
+  <div class="align ion-text-center">
+    <ion-text color="medium"><p>¿Ha olvidado su contraseña?</p></ion-text>
+    <ion-row>
+      <ion-col size="3"
+        ><ion-icon name="logo-facebook" color="white"></ion-icon
+      ></ion-col>
+      <ion-col size="3"
+        ><ion-icon name="logo-google" color="white"></ion-icon
+      ></ion-col>
+    </ion-row>
+  </div>
+</ion-content>

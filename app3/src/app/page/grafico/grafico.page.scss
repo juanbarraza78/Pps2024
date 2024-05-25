@@ -1,0 +1,29 @@
+ion-content {
+  --background: #b5e2e7;
+}
+
+.logoInterfaz {
+  margin: 0 20px;
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+.list-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  color: #3c4bcf;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+}

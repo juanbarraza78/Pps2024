@@ -37,6 +37,16 @@ ion-content {
   margin-bottom: 60px;
 }
 
+.graficContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 200px;
+  }
+}
+
 .card {
   width: 100%;
   padding: 1.6rem 2rem;

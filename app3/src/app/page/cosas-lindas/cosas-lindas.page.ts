@@ -93,6 +93,7 @@ export class CosasLindasPage implements OnInit {
       user: img.user,
       url: img.url,
       lindoFeo: img.lindoFeo,
+      dateString: img.dateString,
     });
   }
 
@@ -123,6 +124,7 @@ export class CosasLindasPage implements OnInit {
       user: img.user,
       url: img.url,
       lindoFeo: img.lindoFeo,
+      dateString: img.dateString,
     });
   }
 
@@ -170,9 +172,10 @@ export class CosasLindasPage implements OnInit {
       const blob = this.dataURLtoblob(image.dataUrl);
       const url = await this.uploadImage(blob, image);
       let imgNuevo;
+      let dateActual = new Date();
       if (this.router.url == '/cosas-lindas') {
         imgNuevo = {
-          date: new Date(),
+          date: dateActual,
           likes: 0,
           dislikes: 0,
           listaLikes: [],
@@ -180,10 +183,15 @@ export class CosasLindasPage implements OnInit {
           user: this.authService.currentUserSig()?.email || 'Usuario anonimo',
           url: url,
           lindoFeo: '/cosas-lindas',
+          dateString: `${dateActual.toLocaleDateString('es-ES', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          })} - ${dateActual.toLocaleTimeString()}`,
         };
       } else {
         imgNuevo = {
-          date: new Date(),
+          date: dateActual,
           likes: 0,
           dislikes: 0,
           listaLikes: [],
@@ -191,6 +199,11 @@ export class CosasLindasPage implements OnInit {
           user: this.authService.currentUserSig()?.email || 'Usuario anonimo',
           url: url,
           lindoFeo: '/cosas-feas',
+          dateString: `${dateActual.toLocaleDateString('es-ES', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          })} - ${dateActual.toLocaleTimeString()}`,
         };
       }
       this.firestorage.createImg(imgNuevo);

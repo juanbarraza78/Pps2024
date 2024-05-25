@@ -55,6 +55,10 @@ export class HomePage implements OnInit {
     this.router.navigateByUrl('/home');
   }
 
+  goGraficos() {
+    this.router.navigateByUrl('/grafico');
+  }
+
   goCosasLindas() {
     this.router.navigateByUrl('/cosas-lindas');
   }

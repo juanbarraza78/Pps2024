@@ -61,6 +61,7 @@ export class StorageService {
   updateImg(id: string, img: imgInterface) {
     return updateDoc(this.document(id), { ...img });
   }
+
   deleteImg(id: string) {
     return deleteDoc(this.document(id));
   }

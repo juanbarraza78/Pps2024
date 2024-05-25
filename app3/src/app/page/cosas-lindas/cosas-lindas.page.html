@@ -25,6 +25,7 @@
     <div class="card">
       <ion-img src="{{image.url}}"></ion-img>
       <div class="card-content">
+        <h3 class="title">{{image.dateString}}</h3>
         <h3 class="title">{{image.user}}</h3>
         @if(this.router.url == "/cosas-lindas") {
         <h2 class="subtitle">{{image.likes}}</h2>
@@ -54,13 +55,6 @@
     </div>
     } }
   </div>
-  <!-- Grafico de barras -->
-  @if (this.router.url == "/cosas-lindas") {
-  <app-grafico-barras></app-grafico-barras>
-  } @if (this.router.url == "/cosas-feas") {
-  <app-grafico-barras-real></app-grafico-barras-real>
-  }
-
   <!-- Flotante -->
   <ion-fab slot="fixed" vertical="bottom" horizontal="center">
     <ion-fab-button>

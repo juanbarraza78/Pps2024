@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    @if(this.authService.currentUserSig() == null) {
+    <ion-buttons slot="secondary">
+      <ion-button (click)="goLogin()"> Ingresar </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goRegister()"> Registrar </ion-button>
+    </ion-buttons>
+    } @if(this.authService.currentUserSig()) {
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()">
+        <img src="../../../assets/salir-alt.svg" height="30px" alt="Salir" />
+      </ion-button>
+    </ion-buttons>
+    }
+    <ion-title (click)="goHome()"
+      ><img height="30px" src="../../../assets/splashanimated.png" alt="Logo"
+    /></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="secondary">
+  @if(this.authService.currentUserSig()) {
+  <h1>hola</h1>
+  <ion-button
+    expand="full"
+    fill="outline"
+    size="large"
+    shape="round"
+    (click)="scanBRcode()"
+    >ESCANEAR CODIGOSS</ion-button
+  >
+  <!-- Contenido Main -->
+  }
+</ion-content>

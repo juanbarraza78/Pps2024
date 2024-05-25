@@ -25,8 +25,10 @@
           *ngFor="let message of messages4A"
           [ngClass]="agregarClase(message.userName)"
         >
+          @if(!(this.authService.currentUserSig()?.username ==
+          message.userName)){
           <span> {{ message.userName }} </span> <br />
-          {{ message.text }} <br />
+          } {{ message.text }} <br />
           <span> {{ message.date }} </span>
         </p>
         }@else {
@@ -35,8 +37,10 @@
           *ngFor="let message of messages4B"
           [ngClass]="agregarClase(message.userName)"
         >
-          <span> {{ message.userName }} </span> <br />
-          {{ message.text }} <br />
+          @if(!(this.authService.currentUserSig()?.username ==
+          message.userName)){
+          <span> {{ message.userName }} </span> <br />} {{ message.text }}
+          <br />
           <span> {{ message.date }} </span>
         </p>
         }

@@ -1,0 +1,68 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-icon
+      (click)="goHome()"
+      class="back"
+      name="chevron-back-outline"
+    ></ion-icon>
+  </ion-toolbar>
+  <ion-row>
+    <ion-label>
+      Crea Una
+      <p>Cuenta</p>
+    </ion-label>
+  </ion-row>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="ion-padding-horizontal ion-margin-horizontal">
+    <form [formGroup]="form">
+      <div class="ion-margin-bottom">
+        <ion-item>
+          <ion-input
+            placeholder="Usuario"
+            type="text"
+            formControlName="username"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="ion-margin-bottom">
+        <ion-item>
+          <ion-input
+            placeholder="Correo Electronico"
+            type="email"
+            formControlName="email"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="ion-margin-bottom">
+        <ion-item>
+          <ion-input
+            placeholder="Contraseña"
+            type="password"
+            formControlName="password"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <ion-item lines="none" class="signin">
+        <ion-label> Registrar </ion-label>
+        <ion-fab-button slot="end" (click)="onSubmit()">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-item>
+      <ion-toast
+        color="danger"
+        [isOpen]="isToastOpen"
+        message="Correo electrónico o Contraseña incorrecto"
+        [duration]="3000"
+        (didDismiss)="setOpen(false)"
+      ></ion-toast>
+    </form>
+
+    <ion-item lines="none" class="featuredItems">
+      <ion-text (click)="goLogin()" slot="start">
+        ¿Ya tienes una cuenta? ¡Ingresa!</ion-text
+      >
+    </ion-item>
+  </ion-list>
+</ion-content>

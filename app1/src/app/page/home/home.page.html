@@ -7,7 +7,7 @@
     <ion-buttons slot="primary">
       <ion-button (click)="goRegister()"> Registrar </ion-button>
     </ion-buttons>
-    } @if(this.authService.currentUserSig()) {
+    } @if(this.authService.currentUserSig() && estaBloqueado == false) {
     <ion-buttons slot="primary">
       <ion-button (click)="logout()"> Salir </ion-button>
     </ion-buttons>

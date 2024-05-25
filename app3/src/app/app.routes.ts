@@ -34,6 +34,11 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'grafico',
+    loadComponent: () =>
+      import('./page/grafico/grafico.page').then((m) => m.GraficoPage),
+  },
+  {
     path: '',
     loadComponent: () =>
       import('./page/splash/splash.page').then((m) => m.SplashPage),

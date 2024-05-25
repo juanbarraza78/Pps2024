@@ -7,6 +7,7 @@ npm install @capacitor/android
 npm install @capacitor/assets (intalar iconos)
 npm install @capacitor/camera (Instalar camara)
 npm install @swimlane/ngx-charts --save (para hacer graficos)
+npm install angularx-qrcode --save (Agregar qr)
 
 ng add @angular/fire (genera los providers para firebase)
 npx capacitor-assets generate (genera los iconos)
@@ -19,31 +20,19 @@ npx cap open android
 
 ionic serve
 
-
 para cambiar el id: 
 en android/app/build.grandle
 cambia el string de la propiedad:
 applicationId "app5.didactico" (minimo un . )
 
-Qr
-npm install angularx-qrcode --save
-
-
-
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-esto en el index si queres los iconos de ionic
-
-ionic cordova plugin add phonegap-plugin-barcodescanner
-npm install @awesome-cordova-plugins/barcode-scanner
 
 Forzar dependencias
 --legacy-peer-deps
 
 
+npm install --save @awesome-cordova-plugins/core
+npm install --save @awesome-cordova-plugins/barcode-scanner 
+
+
+npm install -g @ionic/cli
+npm install -g @angular/cli@17

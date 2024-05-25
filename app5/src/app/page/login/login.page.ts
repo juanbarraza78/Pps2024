@@ -86,6 +86,7 @@ export class LoginPage implements OnInit {
       next: () => {
         setTimeout(() => {
           this.router.navigateByUrl('/home');
+          this.form.setValue({ email: '', password: '' });
         }, 1000);
       },
       error: () => {
